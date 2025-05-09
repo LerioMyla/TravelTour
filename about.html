@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tourist Spot - About</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">Travel</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="explore.html">Explore</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <video class="video-slide" src="1.mp4" autoplay muted loop></video>
+      <video class="video-slide active" src="2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+    <div class="content active">
+      <h1>About Us</h1>
+      <p>We are dedicated to providing the best travel experiences.</p>
+      <p>Founded in 2020, our mission is to inspire travelers to explore new destinations.</p>
+      <p>Our team consists of experienced travelers and local experts.</p>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+  //Video Slider Navigation
+  const btns = document.querySelectorAll(".nav-btn");
+  const slides = document.querySelectorAll(".video-slide");
+  const contents = document.querySelectorAll(".content");
+  
+  var sliderNav = function(manual){
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+
+    contents.forEach((content) => {
+      content.classList.remove("active");
+    });
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+  }
+
+  btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      sliderNav(i);
+    });
+  });
+  </script>
+
+</body>
+</html>
