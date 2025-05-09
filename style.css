@@ -68,7 +68,7 @@ section{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #2696E9;
+  background: #f9f9f9;
 }
 
 .home:before{
